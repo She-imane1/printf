@@ -163,7 +163,7 @@ int write_unsgnd(int is_negative, int ind,char buffer[],
 		buffer[--ind] = '0';
 		length++;
 	}
-	if ((flags & F_ZERO) && !(flags & F_MINUS));
+	if ((flags & F_ZERO) && !(flags & F_MINUS))
 	padd = '0';
 	if (width > length)
 	{

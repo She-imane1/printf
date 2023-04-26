@@ -23,7 +23,7 @@ int print_pointer(va_list types, char buffer[], int flags,
 	UNUSED(width);
 	UNUSED(size);
 
-	if (addrs = NULL)
+	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
 	buffer[BUFF_SIZE - 1] = '\0';
 	UNUSED(precision);

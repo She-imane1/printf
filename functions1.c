@@ -15,6 +15,7 @@ int flags, int width, int precision, int size)
 {
 int i = BUFF_SIZE - 2;
 unsigned long int num = va_arg(types, unsigned long int);
+
 num = convert_size_unsgnd(num, size);
 if (num == 0)
 buffer[i--] = '0';
@@ -42,8 +43,9 @@ int print_octal(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 int i = BUFF_SIZE - 2;
-unsigned long int num = va_arg(types, unsigned long int)
-unsigned long int int_num = num;
+unsigned long int num = va_arg(types, unsigned long int);
+unsigned long int init_num = num;
+
 UNUSED(width);
 num = convert_size_unsgnd(num, size);
 if (num == 0)
@@ -95,7 +97,7 @@ flags, 'X', width, precision, size));
 }
 /************PRINT HEXX NUM IN LOWER OR UPPER************/
 /**
-*print_hexa - prints a hexadecimal number in lower or upper
+* print_hexa - prints a hexadecimal number in lower or upper
 *@types: list of arguments
 *@map_to: array ofvalues to map the number to
 *@buffer: buffer array to handle print
@@ -107,8 +109,8 @@ flags, 'X', width, precision, size));
 *@size: size specification
 *Return: number of chars printed
 */
-int print_hexa(va_list types, char map_to[],
-int flags, char buffer[], char flag_ch, int width, int precision, int size)
+int print_hexa(va_list types, char map_to[], char buffer[],
+int flags, char flag_ch, int width, int precision, int size)
 {
 int i = BUFF_SIZE - 2;
 unsigned long int num = va_arg(types, unsigned long int);
