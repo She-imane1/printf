@@ -144,7 +144,7 @@ int write_num(int ind, char buffer[],
  * @size: size specifier
  * Return: num of written chars
  */
-int write_unsgnd(int is_negative, int ind,char buffer[],
+int write_unsgnd(int is_negative, int ind, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1, i = 0;
@@ -217,8 +217,8 @@ int write_pointer(char buffer[], int ind, int length, int width,
 		{
 			buffer[--ind] = 'x';
                         buffer[--ind] = '0';
-                        if (extra_c)
-                                buffer[--ind] = extra_c;
+                        if (extra_
+					buffer[--ind] = extra_c;
 			return (write(1, &buffer[3], i - 3) +
 					write(1, &buffer[ind], length));
 		}

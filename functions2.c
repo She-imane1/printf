@@ -42,7 +42,7 @@ int print_pointer(va_list types, char buffer[], int flags,
 	if (flags & F_PLUS)
 		extra_c = '+', length++;
 	else if (flags & F_SPACE)
-		extra_c =' ', length++;
+		extra_c = ' ', length++;
 	ind++;
 
 	/* return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
@@ -52,7 +52,7 @@ int print_pointer(va_list types, char buffer[], int flags,
 
 /**** PRINT NON PRINTABLE ****/
 /**
- * print_non_printable - prints ascii codes 
+ * print_non_printable - prints ascii codes
  * @types: list of arg
  * @buffer: buffer arr to handle
  * @flags: calculates active flags
@@ -114,7 +114,6 @@ int print_reverse(va_list types, char buffer[], int flags,
 	if (str == NULL)
 	{
 		UNUSED(precision);
-	
 		str = ")Null(";
 	}
 	for (i = 0; str[i]; i++)
@@ -122,6 +121,7 @@ int print_reverse(va_list types, char buffer[], int flags,
 	for (i = i - 1; i >= 0; i--)
 	{
 		char z = str[i];
+
 		write(1, &z, 1);
 		count++;
 	}
